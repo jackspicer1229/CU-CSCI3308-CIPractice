@@ -1,0 +1,6 @@
+language: c
+compiler: gcc
+install: sudo make dep
+script:
+ - make clean
+ - make test
