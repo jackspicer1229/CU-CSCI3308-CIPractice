@@ -1,5 +1,6 @@
 language: c
+compiler: gcc
+install: make dep
 script:
- - make dep
  - make clean
  - make test
