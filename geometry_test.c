@@ -152,39 +152,17 @@ START_TEST(test_2d_area){
 
     a.x = b.x = c.x = 0;
     a.y = b.y = c.y = 0;
-    ck_assert(coord_2d_area_triangle(&a, &b, &c));
+    ck_assert(coord_2d_area_triangle(&a, &b, &c) == 0.0);
 
-    a.x = b.x = c.x = 9.99;
-    a.y = b.y = c.y = 9.99;
-    ck_assert(coord_2d_area_triangle(&a, &b, &c));
+    a.x = 0;
+    a.y = 0;
+    b.x = 0;
+    b.y = 2;
+    c.x = 2;
+    c.y = 0;
+    ck_assert(coord_2d_area_triangle(&a, &b, &c) == 2.0);
 
-    a.x = b.x = c.x = 3.33;
-    a.y = b.y = c.y = 9.99;
-    ck_assert(coord_2d_area_triangle(&a, &b, &c));
-
-    a.x = 3.33;
-    a.y = 9.99;
-    b.x = 3.33;
-    b.y = 10.99;
-    c.x = 3.33;
-    c.y = 11.99;
-    ck_assert(coord_2d_area_triangle(&a, &b, &c));
-
-    a.x = 3.33;
-    a.y = 9.99;
-    b.x = 2.33;
-    b.y = 9.99;
-    c.x = 1.33;
-    c.y = 9.99;
-    ck_assert(coord_2d_area_triangle(&a, &b, &c));
-
-    a.x = 1.11;
-    a.y = 2.22;
-    b.x = 7.77;
-    b.y = 8.88;
-    c.x = 3.33;
-    c.y = 9.99;
-    ck_assert(coord_2d_area_triangle(&a, &b, &c));
+    
 
 }
 END_TEST
